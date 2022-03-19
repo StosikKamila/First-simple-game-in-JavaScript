@@ -1,0 +1,47 @@
+body header{
+    border: 2px dashed yellow;
+    input{display: none;}
+    label{
+        border:2px dashed red;
+        width:3em;
+        height:3em;
+        position: fixed;
+        div{
+            background-color: #000;
+            height:5px;
+            width: 100%;
+            position: absolute;
+            &:nth-child(1){
+                top: calc(20% - 2.5px);
+            }
+            &:nth-child(2){
+                top:calc(50% - 2.5px);
+
+            }
+            &:nth-child(3){
+                top:calc(80% - 2.5px);
+
+            }
+        }
+    }
+    nav{display:none;}
+    #toggler:checked ~nav{
+        display: block;
+    }
+
+
+
+    h1{margin-top: 3em;}
+}
+// nav{
+//     border: 2px dashed yellow;
+// }
+// nav ul{
+//     border: 2px dashed green;
+// }
+// nav ul li{
+//  border: 2px dashed blue;
+// }
+//  nav ul li a{
+//      border: 2px dashed red;
+// }
