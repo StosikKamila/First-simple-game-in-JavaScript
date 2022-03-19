@@ -1,47 +1,152 @@
-body header{
-    border: 2px dashed yellow;
-    input{display: none;}
-    label{
-        border:2px dashed red;
-        width:3em;
-        height:3em;
-        position: fixed;
-        div{
-            background-color: #000;
-            height:5px;
-            width: 100%;
-            position: absolute;
-            &:nth-child(1){
-                top: calc(20% - 2.5px);
-            }
-            &:nth-child(2){
-                top:calc(50% - 2.5px);
+$darkColor:#000036;
+$secondaryColor: #282162;
+$primaryColor: #7562E0;
+$marginSize:3.5rem;
+$white:#fff;
+$darkenColor:#181824;
+body {
+    background-color: $darkColor;
+    color: $primaryColor;
+    > header{
+        border: 2px dashed yellow;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        input{
+            display: none;
+        }
 
-            }
-            &:nth-child(3){
-                top:calc(80% - 2.5px);
+        label{
+            border:2px dashed red;
+            width:3rem;
+            height:3rem;
+            position: fixed;
+            cursor: pointer;
+            div{
+                transition: .5s;
+                background-color: #000;
+                height:5px;
+                width: 100%;
+                position: absolute;
+                &:nth-child(1){
+                    top: calc(20% - 2.5px);
+                }
+                &:nth-child(2){
+                    top:calc(50% - 2.5px);
 
+                }
+                &:nth-child(3){
+                    top:calc(80% - 2.5px);
+
+                }
             }
         }
+
+        nav{
+            display:none;
+            position: fixed;
+            border: 2px dashed red;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            margin-top: 3.5rem;
+            ul{
+                list-style-type: none;
+            }
+        }
+
+        #toggler:checked ~ nav{
+            display: block;
+        }
+
+        #toggler:checked ~ label{
+            div{
+                &:nth-child(1){
+                    transform: rotate(45deg);
+                    top: calc(50% - 2.5px);
+                }
+                &:nth-child(2){
+                    opacity: 0;
+                }
+                &:nth-child(3){
+                    transform: rotate(-45deg);
+                    top: calc(50% - 2.5px);
+                }
+            }
+        }
+
+        h1{
+            margin-left: 3.5rem;
+        }
+        
+        @media (min-width:768px) {
+            label{
+                display: none;
+        }
+            nav{
+            position: static;
+            margin: 0;
+            display: flex;
+            ul{
+                width: 100%;
+                list-style-type: none;
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                padding: 0;
+            }
+        } 
+        }
+
     }
-    nav{display:none;}
-    #toggler:checked ~nav{
-        display: block;
+    #home{
+        border: 5px dashed red;
+        display: flex;
+        flex-direction: column-reverse;
+        margin:0 $marginSize;
+        header{
+            flex:1;
+            border: 5px dashed blue;
+            flex-direction: column;
+            display: flex;
+            .wrapper{
+                border: 5px dashed yellow;
+              
+            }
+            p{
+                margin: 5rem auto;
+                
+            }
+            .desc{
+                font-weight: 500;
+                font-size: .7em;
+            }
+            .buttonField{
+
+                a{
+                    border: 5px solid springgreen;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    padding: 5px 10px;
+                    color: #FFF;
+                    &:nth-child(1){
+                        background-color: $primaryColor;
+                    }
+            }
+            }
+        }
+        .imgWrapper{
+            flex:1;
+            border: 5px dashed violet;
+            justify-content: center;
+            display: flex;
+        }
+        @media (min-width:768px){
+            padding: $marginSize*2 0;
+            flex-direction: row;
+        }
+
     }
-
-
-
-    h1{margin-top: 3em;}
 }
-// nav{
-//     border: 2px dashed yellow;
-// }
-// nav ul{
-//     border: 2px dashed green;
-// }
-// nav ul li{
-//  border: 2px dashed blue;
-// }
-//  nav ul li a{
-//      border: 2px dashed red;
-// }
+
