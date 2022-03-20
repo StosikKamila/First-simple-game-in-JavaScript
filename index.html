@@ -1,56 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-
-    <title>Portfolio</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
+  <header>
+    <input type="checkbox" id="toggler">
+    <label for="toggler">
+      <div></div>
+      <div></div>
+      <div></div>
+    </label>
+    <h1>Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a target="_blank" href="https://www.figma.com/file/ihOv2PnKEAD1hQshxA8jJF/Portfolio-Website-Design-(Community)?node-id=2%3A4">FIGMA</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="home">
+    
+    <header>
+      <div class="wrapper">
+        <p>Hello, i'm</p>
+        <h2>Jayjay D. Dinero</h2>
+        <p class="desc">Freelance UI designer, Fullstack developer, & Data Miner. 
+          I create seamless web experiences for end-users.</p>
+      </div>
+      <div class="buttonField">
+        <a href="#about" class="button fill">About me</a>
+        <a href="#projects" class="button">Projects</a>
+      </div>
+    </header>
+    <div class="imgWrapper">
+      <img src="img/jayjay.png" alt="Jayjay Profile Photo">
+    </div>    
+  </section>
+  <section id="about">
+      <h2>About me</h2>
+      <p>Hi, my name is Jayjay Dinero Dinero, i am a Fullstack web developer, UI designer, and Mobile developer. I jhave honed my skills in Web Development and advance i have core understanding of advance UI design principles. 
+        Here are the major skiills i have.</p>
+     
+    <div>
+          <span>5+</span>
+          <p>Years of experience. Specialised in building apps, while ensuring a seamless
+            web experience for end users.</p>
+    </div>
 
-   <header>
-        <input type="checkbox" id="toggler">
-        <label for="toggler">
-            <div></div>
-            <div></div>
-            <div></div>
-        </label>
 
+  </section>
+  <main id="services">
+    <h2>The services i offer:</h2>
+    <section>
+      <article>
+        <img src="img/vuesax/ruler&pen.svg" alt="Ruler and Pen">
+        <h3>UX & UI DESIGNING</h3>
+        <p>I design beautiful web iterfaces with Figma and Adove XD</p>
+      </article>
+      <article>
+        <img src="img/vuesax/code.svg" alt="CODE">
+        <h3>WEB DEVELOPMENT</h3>
+        <p>I create beautiful iterfaces with simple HTML, CSS, & JavaScript and also frameworks like Angular and ReactJS</p>
+      </article>
+      <article>
+        <img src="img/vuesax/android.svg" alt="Android">
+        <h3>MOBILE DEVELOPMENT</h3>
+        <p>I am an expert mobile developer. I have experience using Flutter and React Native.</p>
+      </article>
+      <article>
+        <img src="img/vuesax/git-repo.svg" alt="GIT Repo">
+        <h3>VERSION CONTROL</h3>
+        <p>I can use version control systems well, and Git & Mecurial are my go-to tool.</p>
+      </article>
+      <article>
+        <img src="img/vuesax/javascript.svg" alt="JavaScript">
+        <h3>NPM AND NODEJS</h3>
+        <p>I have core understanding of NPM. I can also develop general purpose applications with NodeJS</p>
+      </article>
+      <article>
+        <img src="img/vuesax/slider.svg" alt="Scraper">
+        <h3>WEB SCRAPING</h3>
+        <p>I can collect content and data from the internet then manipulate and analyze as needed.</p>
+      </article>
+    </section>
+</main>
+<section id="projects">
+    <h2>Featured projects</h2>
+    <p>I have worked on many projects over the course of being a Web Developer, here are a few of my live, real-world projects</p>
 
-        <h1>Portfolio</h1>
+    <div class="container">
+        <article>
+            <img src="img/projects/thumbnail-1.png" alt="Twinder Image">
+            <h3>TWINDER</h3>
+            <p>A live Geolocation app for finding tweets and twitter users around you.</p>
+            <div class="buttonWrapper">
+              <a href="#" class="button fill">View Live</a>
+              <a href="#" class="button">Github&nbsp;Repo</a>
+            </div>
+          </article>
+    
+          <article>
+            <img src="img/projects/thumbnail-2.png" alt="Livents Image">
+            <h3>LIVENTS</h3>
+            <p>A video streaming app with live Geolocation, for streaming events.</p>
+            <div class="buttonWrapper">
+              <a href="#" class="button fill">View Live</a>
+              <a href="#" class="button">Github&nbsp;Repo</a>
+            </div>
+          </article>
+    
+          <article>
+            <img src="img/projects/thumbnail-3.png" alt="Moove Image">
+            <h3>MOOVE</h3>
+            <p>Mobile app for booking instant pickup & dropoff accross major cities.</p>
+            <div class="buttonWrapper">
+              <a href="#" class="button fill">View Live</a>
+              <a href="#" class="button">Github&nbsp;Repo</a>
+            </div>
+          </article>
+    </div>
 
-        <nav>
-            <ul>
-                <li>
-                    <a href="#">O mnie</a>
-                </li>
-                <li>
-                    <a href="#">Projekty</a>
-                </li>
-                <li>
-                    <a href="#">Link3</a>
-                </li>
-            </ul>
-        </nav>
-   </header>
-   <section id="home">
-       <header>
-           <div class="wrapper">
-                <p>Hello I'm</p>
-                <p>Kamila S.</p>
-                <p class="desc">Tester, who learn to code</p>
-           </div>
-           <div class="buttonField">
-               <a href="#about">About me</a>
-               <a href="#projects">Projects</a>
-           </div>
-        </header>
-        <div class="imgWrapper">
-            <img src="tl.jpg" alt="Profile Photo">
-        </div>
-   </section>
+  </section>
 </body>
 </html>
