@@ -1,2 +1,2 @@
 # APP1
-Aplikacja
+First broject in HTML/SCSS created on the course, based on the template
