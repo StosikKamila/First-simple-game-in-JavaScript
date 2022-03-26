@@ -4,7 +4,7 @@ $darkColor:#000036;
 $secondaryColor:#282162;
 $primaryColor:#7562E0;
 $white:#fff;
-$cardBackground:#31313F;
+$cardBackground: #31313F;
 $marginSize:3.5rem;
 h1,h2,h3,h4{ color:$primaryColor; }
 .button{
@@ -13,11 +13,13 @@ h1,h2,h3,h4{ color:$primaryColor; }
   border-radius: 5px;
   padding:5px 15px;
   color:$white;
-  font-size:.7em;
+  // font-size:.7em;
+  font-size:clamp(.4em, 3vw, .7em);
   &.fill{
     background-color: $primaryColor;
   }
 }
+
 body{
   font-family: 'Poppins', sans-serif;
   background-color: $darkenColor;
@@ -116,17 +118,19 @@ body{
       }
     }
   }
+  // na wszystkie sekcje pod body dodaj margines z prawej i lewej
   > section, main{
     margin:0 $marginSize;
-    @media(min-device-width: 768px){
-      width: 60%;
-      margin: 0 auto;
+    @media(min-width:768px){ 
+      width:60%; 
+      margin:0 auto;
     }
-    @media(min-device-width: 1280px){
-      width: 50%;
+    @media(min-width:1280px){ 
+      width:50%; 
     }
 
   }
+
   #home{
     display:flex;
     flex-direction: column-reverse;
@@ -172,111 +176,159 @@ body{
       flex-direction: row;
     }
   }
-  #about{
-    h2{
-      margin-bottom: 0;
-      
-    } 
-    > p{
-      margin: 0;
-      font-size: .8em;
 
+  #about{
+    h2{margin-bottom: 0;}
+    > p{
+      margin:0;
+      font-size:.8em;
     }
     div{
-      display: flex;
+      display:flex;
       align-items: center;
       span{
         color:$primaryColor;
-        font-size: 3.5em;
-
+        font-size:3.5em;
       }
       p{
         padding-left:1em;
       }
-
     }
+
   }
+
   #services{
     section{
-      display: grid;
-      gap: 1em;
+      display:grid;
+      gap:1em;
       article{
-        
-        display: grid;
+        border-radius: 16px;
+        border:3px solid $primaryColor;
+        display:grid;
         place-items: center;
         grid-template-rows: 2fr 1fr 4fr;
-
-        border: 3px solid $primaryColor;
-        border-radius: 16px;
-        p, h3{
-          text-align: center;
-        }
-        h3{
-          margin-top:0;
-          color: $white;
-        }
-        img{
-          align-self:end;
-        }
+        padding-top:2.5em;
+        h3, p{text-align: center;}
+        h3{margin:0;color:$white;}
+        img{align-self:end;}
         p{
-          align-self:start;  
+          align-self:start;
           padding: 0 .5em;
         }
 
         &:nth-child(even){
-          border-color: $white;
-          h3{color: $primaryColor;}
+          border-color:$white;
+          h3{color:$primaryColor;}
         }
-      
+
       }
     }
-     @media (min-device-width: 768px) and (max-width: 1250px){
-       section{
-        grid-template-columns: 1fr 1fr;
-        // article{
-        //   padding-top: 0;
-        // }
-       }
-     }
-     @media (min-device-width: 1060px){
+    @media (min-width:768px) and (max-width:1250px){
       section{
-       grid-template-columns: 1fr 1fr 1fr;
-    //    article{
-    //      padding-top: 0;
-    // }
-}
-     }
-   
+        grid-template-columns: 1fr 1fr;    
+      }
+    }
+    @media (min-width:1250px){
+      section{
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
   }
+
   #projects{
     .container{
-      display: flex;
-      gap: 1em;
+      display:flex;
+      // gap:1em;
       flex-wrap: wrap;
       justify-content: center;
       article{
-       background-color: $cardBackground;
-        padding: 1em;
+        margin:.5em;
+        padding:1em;
+        background-color: $cardBackground;
         border-radius: 8px;
-        max-width: 311px;
-         img{
-          max-width: 100%;
+        max-width:311px;
+        img{
+          max-width:100%;
         }
       }
     }
-    @media (min-device-width: 768px) and (max-width: 1250px){
-      
-        article{
-          width:calc(50% - 2.5em);
-        }
-      
-    }
-    @media (min-device-width: 1060px){
-   
-        article{
-          width:calc(33% - 8em/3);
-     
+
+    @media (min-width:768px) and (max-width:1250px){
+      article{
+        // 50% - obszar jednego przycisku
+        // 2.5em - połowa wszystkich paddingów
+        // i marginesów w kontenerze ( 4em padding i 2em margines)
+        width:calc(50% - 3em);
       }
-}
+    }
+    @media (min-width:1250px){
+      article{
+        // 33% - obszar jednego przycisku (100%/3)
+        // 9em - wszystkie paddingi i marginesy
+        // w kontenerze ( 6em padding i 3em margin)
+        width:calc( 33% - 9em/3 );
+      }
+    }
+
+  }
+  #contact{
+    margin-top: 2em;
+    h3{color:$white}
+    form{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      input, textarea{
+        background-color: $cardBackground;
+        box-sizing: border-box;
+        width: 100%;
+        border-radius: 8px;
+        padding: 1em;
+        margin: .5em 0;
+        border: none;
+        outline: 0;
+        color: $white;
+        font-family: 'Poppins', sans-serif;
+      }
+    }
+    @media (min-width:768px){
+      display: flex;
+      header{
+        padding-right: 1.5em;
+      }
+    }
+  }
+  footer{
+    padding: 2rem;
+    padding-bottom: 1rem;
+    .links{
+      display: grid;
+      grid-template-areas: 
+      "e4" "e2" "e3" "e5" "e1";
+      padding-bottom: 1rem;
+      font-size: .8em;
+
+      @media(min-width: 1660px){
+        grid-template-areas: 
+        "e1 e2 e3 e4 5e";
+      }
+    
+      a{
+        color: $white;
+        opacity: .5;
+        text-decoration: none;
+        // &:nth-child(1){grid-area: e1;}
+        // &:nth-child(2){grid-area: e2;}
+        // &:nth-child(3){grid-area: e3;}
+        // &:nth-child(4){grid-area: e4;}
+        // &:nth-child(5){grid-area: e5;}
+        @for $i from 1 to 5 {
+          &:nth-child(#{$i}){
+            grid-area: e#{$i};
+          }
+        }
+      }
+    }
   }
 }
