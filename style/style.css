@@ -9,7 +9,7 @@ h1, h2, h3, h4 {
   border-radius: 5px;
   padding: 5px 15px;
   color: #fff;
-  font-size: 0.7em;
+  font-size: clamp(0.4em, 3vw, 0.7em);
 }
 .button.fill {
   background-color: #7562E0;
@@ -115,13 +115,13 @@ body > header h1 {
 body > section, body main {
   margin: 0 3.5rem;
 }
-@media (min-device-width: 768px) {
+@media (min-width: 768px) {
   body > section, body main {
     width: 60%;
     margin: 0 auto;
   }
 }
-@media (min-device-width: 1280px) {
+@media (min-width: 1280px) {
   body > section, body main {
     width: 50%;
   }
@@ -196,17 +196,18 @@ body #services section {
   gap: 1em;
 }
 body #services section article {
+  border-radius: 16px;
+  border: 3px solid #7562E0;
   display: grid;
   place-items: center;
   grid-template-rows: 2fr 1fr 4fr;
-  border: 3px solid #7562E0;
-  border-radius: 16px;
+  padding-top: 2.5em;
 }
-body #services section article p, body #services section article h3 {
+body #services section article h3, body #services section article p {
   text-align: center;
 }
 body #services section article h3 {
-  margin-top: 0;
+  margin: 0;
   color: #fff;
 }
 body #services section article img {
@@ -222,38 +223,101 @@ body #services section article:nth-child(even) {
 body #services section article:nth-child(even) h3 {
   color: #7562E0;
 }
-@media (min-device-width: 768px) and (max-width: 1250px) {
+@media (min-width: 768px) and (max-width: 1250px) {
   body #services section {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media (min-device-width: 1060px) {
+@media (min-width: 1250px) {
   body #services section {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 body #projects .container {
   display: flex;
-  gap: 1em;
   flex-wrap: wrap;
   justify-content: center;
 }
 body #projects .container article {
-  background-color: #31313F;
+  margin: 0.5em;
   padding: 1em;
+  background-color: #31313F;
   border-radius: 8px;
   max-width: 311px;
 }
 body #projects .container article img {
   max-width: 100%;
 }
-@media (min-device-width: 768px) and (max-width: 1250px) {
+@media (min-width: 768px) and (max-width: 1250px) {
   body #projects article {
-    width: calc(50% - 2.5em);
+    width: calc(50% - 3em);
   }
 }
-@media (min-device-width: 1060px) {
+@media (min-width: 1250px) {
   body #projects article {
-    width: calc(33% - 2.6666666667em);
+    width: calc(33% - 3em);
   }
+}
+body #contact {
+  margin-top: 2em;
+}
+body #contact h3 {
+  color: #fff;
+}
+body #contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body #contact form input, body #contact form textarea {
+  background-color: #31313F;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 8px;
+  padding: 1em;
+  margin: 0.5em 0;
+  border: none;
+  outline: 0;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+@media (min-width: 768px) {
+  body #contact {
+    display: flex;
+  }
+  body #contact header {
+    padding-right: 1.5em;
+  }
+}
+body footer {
+  padding: 2rem;
+  padding-bottom: 1rem;
+}
+body footer .links {
+  display: grid;
+  grid-template-areas: "e4" "e2" "e3" "e5" "e1";
+  padding-bottom: 1rem;
+  font-size: 0.8em;
+}
+@media (min-width: 1660px) {
+  body footer .links {
+    grid-template-areas: "e1 e2 e3 e4 5e";
+  }
+}
+body footer .links a {
+  color: #fff;
+  opacity: 0.5;
+  text-decoration: none;
+}
+body footer .links a:nth-child(1) {
+  grid-area: e1;
+}
+body footer .links a:nth-child(2) {
+  grid-area: e2;
+}
+body footer .links a:nth-child(3) {
+  grid-area: e3;
+}
+body footer .links a:nth-child(4) {
+  grid-area: e4;
 }/*# sourceMappingURL=style.css.map */
