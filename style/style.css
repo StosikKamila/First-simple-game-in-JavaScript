@@ -15,6 +15,35 @@ h1, h2, h3, h4 {
   background-color: #7562E0;
 }
 
+@-webkit-keyframes selectItem {
+  0% {
+    border-color: red;
+  }
+  50% {
+    transform: scale(1.2) rotate(5deg);
+  }
+  75% {
+    transform: scale(1.2) rotate(-5deg);
+  }
+  100% {
+    border-color: blue;
+  }
+}
+
+@keyframes selectItem {
+  0% {
+    border-color: red;
+  }
+  50% {
+    transform: scale(1.2) rotate(5deg);
+  }
+  75% {
+    transform: scale(1.2) rotate(-5deg);
+  }
+  100% {
+    border-color: blue;
+  }
+}
 body {
   font-family: "Poppins", sans-serif;
   background-color: #181824;
@@ -196,12 +225,17 @@ body #services section {
   gap: 1em;
 }
 body #services section article {
+  background-color: #181824;
   border-radius: 16px;
   border: 3px solid #7562E0;
   display: grid;
   place-items: center;
   grid-template-rows: 2fr 1fr 4fr;
   padding-top: 2.5em;
+}
+body #services section article:hover {
+  -webkit-animation: selectItem 2s ease-out;
+          animation: selectItem 2s ease-out;
 }
 body #services section article h3, body #services section article p {
   text-align: center;
@@ -244,6 +278,10 @@ body #projects .container article {
   background-color: #31313F;
   border-radius: 8px;
   max-width: 311px;
+}
+body #projects .container article:hover {
+  -webkit-animation: selectItem 2s ease-out;
+          animation: selectItem 2s ease-out;
 }
 body #projects .container article img {
   max-width: 100%;

@@ -19,6 +19,20 @@ h1,h2,h3,h4{ color:$primaryColor; }
     background-color: $primaryColor;
   }
 }
+@keyframes selectItem {
+  0%{
+    border-color: red;
+    }
+    50%{
+      transform: scale(1.2) rotate(5deg);
+    }
+    75%{
+      transform: scale(1.2) rotate(-5deg);
+    }
+  100%{
+    border-color: blue;
+  }
+}
 
 body{
   font-family: 'Poppins', sans-serif;
@@ -202,6 +216,10 @@ body{
       display:grid;
       gap:1em;
       article{
+        &:hover{
+        animation: selectItem 2s ease-out;
+        }
+        background-color: $darkenColor;
         border-radius: 16px;
         border:3px solid $primaryColor;
         display:grid;
@@ -243,6 +261,9 @@ body{
       flex-wrap: wrap;
       justify-content: center;
       article{
+        &:hover{
+          animation: selectItem 2s ease-out;
+          }
         margin:.5em;
         padding:1em;
         background-color: $cardBackground;
