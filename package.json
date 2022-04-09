@@ -1,0 +1,23 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "First broject in HTML/SCSS created on the course, based on the template<br>\r First project in JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StosikKamila/APP1.git#main"
+  },
+  "keywords": [
+    "NODE",
+    "app"
+  ],
+  "author": "KamilaStosik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StosikKamila/APP1/issues"
+  },
+  "homepage": "https://github.com/StosikKamila/APP1/tree/main#readme"
+}
